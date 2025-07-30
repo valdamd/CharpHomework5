@@ -34,7 +34,7 @@ public class BubbleShort<T> : AlgoritmBase<T>
     {
         for (int i = 0; i < matrix.Length; i++)
         {
-            for (int j = 0; j < matrix[i].Length - i - 1; j++)
+            for (int j = 0; j < matrix.Length - i - 1; j++)
             {
                 int cmp = keySelector(matrix[j]).CompareTo(keySelector(matrix[j + 1]));
                 bool needSwap = _sortDirection == SortDirection.Ascending ? cmp > 0 : cmp < 0;
@@ -46,16 +46,20 @@ public class BubbleShort<T> : AlgoritmBase<T>
 
     // ---------- Статические критерии сортировки ----------
 
-    public IComparable SumSelector<T>(T[] row)
+    public IComparable SumSelector(T[] row)
     {
+        if (row == null || row.Length == 0)
+            throw new ArgumentException("Массив пуст или равен null");
         dynamic sum = default(T);
         foreach (var item in row)
             sum += (dynamic)item;
         return sum;
     }
 
-    public  IComparable MaxSelector<T>(T[] row)
+    public  IComparable MaxSelector(T[] row)
     {
+        if (row == null || row.Length == 0)
+            throw new ArgumentException("Массив пуст или равен null");
         dynamic max = row[0];
         foreach (var item in row)
             if ((dynamic)item > max)
@@ -63,8 +67,10 @@ public class BubbleShort<T> : AlgoritmBase<T>
         return max;
     }
 
-    public  IComparable MinSelector<T>(T[] row)
+    public  IComparable MinSelector(T[] row)
     {
+        if (row == null || row.Length == 0)
+            throw new ArgumentException("Массив пуст или равен null");
         dynamic min = row[0];
         foreach (var item in row)
             if ((dynamic)item < min)
@@ -72,12 +78,20 @@ public class BubbleShort<T> : AlgoritmBase<T>
         return min;
     }
 
-    public IComparable LengthSelector<T>(T[] row) {
+    public IComparable LengthSelector(T[] row) {
+        if (row == null || row.Length == 0)
+            throw new ArgumentException("Массив пуст или равен null");
         return row.Length;
     }
 
-    // public IComparable FirstElementSelector<T>(T[] row) 
-    // {
-    //     return row[0];
-    // }
+    public IComparable FirstElementSelector(T[] row) 
+    {
+        if (row == null || row.Length == 0)
+            throw new ArgumentException("Массив пуст или равен null");
+
+        if (row[0] is IComparable comp)
+            return comp;
+
+        throw new InvalidOperationException($"Тип {typeof(T)} не реализует IComparable");
+    }
 }

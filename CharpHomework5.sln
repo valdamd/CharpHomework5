@@ -1,6 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharpHomework5", "CharpHomework5\CharpHomework5.csproj", "{89652AF8-9384-4FDC-B6CB-97FF71025A7B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algoritm", "Algoritm\Algoritm.csproj", "{9663E5FC-17FF-45AF-838D-6F2AB6D38E37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program", "Program\Program.csproj", "{AD1A4D12-3D56-4C23-B0D5-B6AC28357597}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BubblyTest", "BubblyTest\BubblyTest.csproj", "{86070A46-C1B6-4975-8C4E-F3AC2114290C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +12,17 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{89652AF8-9384-4FDC-B6CB-97FF71025A7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89652AF8-9384-4FDC-B6CB-97FF71025A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89652AF8-9384-4FDC-B6CB-97FF71025A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89652AF8-9384-4FDC-B6CB-97FF71025A7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9663E5FC-17FF-45AF-838D-6F2AB6D38E37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9663E5FC-17FF-45AF-838D-6F2AB6D38E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9663E5FC-17FF-45AF-838D-6F2AB6D38E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9663E5FC-17FF-45AF-838D-6F2AB6D38E37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD1A4D12-3D56-4C23-B0D5-B6AC28357597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD1A4D12-3D56-4C23-B0D5-B6AC28357597}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD1A4D12-3D56-4C23-B0D5-B6AC28357597}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD1A4D12-3D56-4C23-B0D5-B6AC28357597}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86070A46-C1B6-4975-8C4E-F3AC2114290C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86070A46-C1B6-4975-8C4E-F3AC2114290C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86070A46-C1B6-4975-8C4E-F3AC2114290C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86070A46-C1B6-4975-8C4E-F3AC2114290C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
