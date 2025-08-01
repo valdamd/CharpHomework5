@@ -50,20 +50,38 @@ public class BubbleShort<T> : AlgoritmBase<T>
     {
         if (row == null || row.Length == 0)
             throw new ArgumentException("Массив пуст или равен null");
-        dynamic sum = default(T);
+
+        if (typeof(T) == typeof(string))
+        {
+            int sum = 0;
+            foreach (var item in row)
+                sum += ((string)(object)item).Length; // сумма длины строк
+            return sum;
+        }
+
+        dynamic total = default(T);
         foreach (var item in row)
-            sum += (dynamic)item;
-        return sum;
+            total += (dynamic)item;
+        return total;
     }
 
     public  IComparable MaxSelector(T[] row)
     {
         if (row == null || row.Length == 0)
             throw new ArgumentException("Массив пуст или равен null");
-        dynamic max = row[0];
+
+        IComparable max = row[0] as IComparable ?? throw new InvalidOperationException("Элемент не реализует IComparable");
+
         foreach (var item in row)
-            if ((dynamic)item > max)
-                max = item;
+        {
+            var comparable = item as IComparable;
+            if (comparable == null)
+                throw new InvalidOperationException("Элемент не реализует IComparable");
+
+            if (comparable.CompareTo(max) > 0)
+                max = comparable;
+        }
+
         return max;
     }
 
@@ -71,10 +89,19 @@ public class BubbleShort<T> : AlgoritmBase<T>
     {
         if (row == null || row.Length == 0)
             throw new ArgumentException("Массив пуст или равен null");
-        dynamic min = row[0];
+
+        IComparable min = row[0] as IComparable ?? throw new InvalidOperationException("Элемент не реализует IComparable");
+
         foreach (var item in row)
-            if ((dynamic)item < min)
-                min = item;
+        {
+            var comparable = item as IComparable;
+            if (comparable == null)
+                throw new InvalidOperationException("Элемент не реализует IComparable");
+
+            if (comparable.CompareTo(min) < 0)
+                min = comparable;
+        }
+
         return min;
     }
 

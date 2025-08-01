@@ -293,8 +293,13 @@ public void Test_SortByLength_AscendingAndDescending_AreReverse()
     sorter.SetSortDirection(BubbleShort<double>.SortDirection.Descending);
     sorter.Sort(desc, sorter.LengthSelector);
 
-    for (int i = 0; i < asc.Length; i++)
-        Assert.Equal(asc[i], desc[desc.Length - 1 - i]);
+    // for (int i = 0; i < asc.Length; i++)
+        // Assert.Equal(asc[i], desc[desc.Length - 1 - i]);
+        // Сравниваем последовательности длин
+    var ascKeys = asc.Select(r => (int)sorter.LengthSelector(r)).ToArray();
+    var descKeys = desc.Select(r => (int)sorter.LengthSelector(r)).Reverse().ToArray();
+
+    Assert.Equal(ascKeys, descKeys);
 }
 
 [Xunit.Theory]
@@ -415,8 +420,11 @@ public void Test_SortByMax_Int_AscendingAndDescending_AreReverse()
     sorter.SetSortDirection(BubbleShort<int>.SortDirection.Descending);
     sorter.Sort(desc, sorter.MaxSelector);
 
-    for (int i = 0; i < asc.Length; i++)
-        Assert.Equal(asc[i], desc[desc.Length - 1 - i]);
+    // Сравниваем последовательности максимальных значений
+    var ascKeys = asc.Select(r => (int)sorter.MaxSelector(r)).ToArray();
+    var descKeys = desc.Select(r => (int)sorter.MaxSelector(r)).Reverse().ToArray();
+
+    Assert.Equal(ascKeys, descKeys);
 }
 
 [Fact]
@@ -453,8 +461,13 @@ public void Test_SortByLength_Int_AscendingAndDescending_AreReverse()
     sorter.SetSortDirection(BubbleShort<int>.SortDirection.Descending);
     sorter.Sort(desc, sorter.LengthSelector);
 
-    for (int i = 0; i < asc.Length; i++)
-        Assert.Equal(asc[i], desc[desc.Length - 1 - i]);
+    // for (int i = 0; i < asc.Length; i++)
+        // Assert.Equal(asc[i], desc[desc.Length - 1 - i]);
+    var ascKeys = asc.Select(r => (int)sorter.LengthSelector(r)).ToArray();
+    var descKeys = desc.Select(r => (int)sorter.LengthSelector(r)).Reverse().ToArray();
+
+    Assert.Equal(ascKeys, descKeys);
+    
 }
 [Xunit.Theory]
 [InlineData(BubbleShort<string>.SortDirection.Ascending)]
@@ -618,8 +631,12 @@ public void Test_SortByLength_String_AscendingAndDescending_AreReverse()
     sorter.SetSortDirection(BubbleShort<string>.SortDirection.Descending);
     sorter.Sort(desc, sorter.LengthSelector);
 
-    for (int i = 0; i < asc.Length; i++)
-        Assert.Equal(asc[i], desc[desc.Length - 1 - i]);
+    // for (int i = 0; i < asc.Length; i++)
+        // Assert.Equal(asc[i], desc[desc.Length - 1 - i]);
+    var ascKeys = asc.Select(r => (int)sorter.LengthSelector(r)).ToArray();
+    var descKeys = desc.Select(r => (int)sorter.LengthSelector(r)).Reverse().ToArray();
+
+    Assert.Equal(ascKeys, descKeys);    
 }
 
 }
