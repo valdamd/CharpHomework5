@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algoritm", "Algoritm\Algoritm.csproj", "{9663E5FC-17FF-45AF-838D-6F2AB6D38E37}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm", "Algorithm\Algorithm.csproj", "{9663E5FC-17FF-45AF-838D-6F2AB6D38E37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program", "Program\Program.csproj", "{AD1A4D12-3D56-4C23-B0D5-B6AC28357597}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BubblyTest", "BubblyTest\BubblyTest.csproj", "{86070A46-C1B6-4975-8C4E-F3AC2114290C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BubblyTests", "BubblyTests\BubblyTests.csproj", "{86070A46-C1B6-4975-8C4E-F3AC2114290C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
